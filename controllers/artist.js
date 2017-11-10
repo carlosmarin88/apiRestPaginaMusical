@@ -12,9 +12,10 @@ const Song = require('../models/song');
 
 function getArtist(req, res) {
     let artistId = req.params.id;
-
+    console.log(artistId);
     Artist.findById(artistId, (err, artist) => {
         if (err) {
+            console.log(err);
             res.status(500).send({ message: 'Error al obtener el artista' });
         } else {
             if (!artist) {
