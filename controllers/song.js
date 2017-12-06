@@ -16,7 +16,7 @@ function getSong(req,res){
         }else if(!song){
             res.status(404).send({message:'La cancion no existe'});
         }else{
-            res.status(200).send(song);
+            res.status(200).send({song : song});
         }
     });
 }
